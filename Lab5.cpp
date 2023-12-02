@@ -183,3 +183,41 @@ public:
         Name = name;
     }
 };
+
+class Mage : public virtual Human {
+public:
+    int HealthPoints;
+    int Damage;
+    string Name;
+
+    Mage(string name) {
+        HealthPoints = 15;
+        Damage = 3;
+        Name = name;
+    }
+
+    void TakeWeapon(Weapon& weapon) {
+        Damage += weapon.GetDmg();
+        weapon.Take();
+    }
+
+    void UseWeapon(Weapon& weapon) {
+        weapon.Use();
+    }
+
+    int GetHP() {
+        return HealthPoints;
+    }
+    int GetDmg() {
+        return Damage;
+    }
+    void SetHp(int HP) {
+        HealthPoints = HP;
+    }
+    void SetDamage(int dm) {
+        Damage = dm;
+    }
+    void SetName(string name) override {
+        Name = name;
+    }
+};
