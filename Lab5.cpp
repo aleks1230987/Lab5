@@ -33,3 +33,28 @@ public:
     virtual void Use() = 0;
     virtual int GetDmg() = 0;
 };
+
+class Sword: public virtual Weapon {
+public:
+    int Dmg = 5;
+    int Durability;
+
+    Sword() {
+        Dmg = 5;
+        Durability = 40;
+    }
+
+    void Take() override {
+        cout << "You took sword" << endl;
+    }
+    void Use() override {
+        Durability -= 1;
+        if (Durability <= 0) {
+            cout << "Your sword broken" << endl;
+        }
+    }
+
+    int GetDmg() {
+        return Dmg;
+    }
+};
