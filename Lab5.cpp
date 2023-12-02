@@ -236,3 +236,20 @@ public:
         return Count;
     }
 };
+
+class Bandit: public virtual Human, public virtual Enemy {
+    int HealthPoints;
+    int Level;
+    int Damage;
+
+    Bandit() {
+        HealthPoints = 12;
+        Level = 1;
+        Damage = 2;
+    }
+    Bandit(int level) {
+        HealthPoints = 12 + 2 * level;
+        Level = level;
+        Damage = 2 + level;
+    }
+};
