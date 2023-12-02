@@ -27,6 +27,30 @@ public:
     }
 };
 
+class Staff : public virtual Weapon {
+public:
+    int Dmg;
+    int Durability;
+
+    Staff() {
+        Dmg = 10;
+        Durability = 10;
+    }
+
+    void Take() override {
+        cout << "You took staff" << endl;
+    }
+    void Use() override {
+        Durability -= 1;
+        if (Durability <= 0) {
+            cout << "Your staff broken" << endl;
+        }
+    }
+    int GetDmg() {
+        return Dmg;
+    }
+};
+
 class Weapon {
 public:
     virtual void Take() = 0;
