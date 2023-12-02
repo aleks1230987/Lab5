@@ -58,3 +58,27 @@ public:
         return Dmg;
     }
 };
+
+class Bow : public virtual Weapon {
+public:
+    int Dmg;
+    int Durability;
+
+    Bow() {
+        Dmg = 7;
+        Durability = 20;
+    }
+
+    void Take() override {
+        cout << "You took bow" << endl;
+    }
+    void Use() override {
+        Durability -= 1;
+        if (Durability <= 0) {
+            cout << "Your bow broken" << endl;
+        }
+    }
+    int GetDmg() {
+        return Dmg;
+    }
+};
