@@ -26,3 +26,10 @@ public:
         Name = "";
     }
 };
+
+class Weapon {
+public:
+    virtual void Take() = 0;
+    virtual void Use() = 0;
+    virtual int GetDmg() = 0;
+};
