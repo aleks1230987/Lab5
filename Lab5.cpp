@@ -22,3 +22,7 @@ public:
     int GetLevel() {
         return Level;
     }
+    virtual void SetName(string name) {
+        Name = "";
+    }
+};
