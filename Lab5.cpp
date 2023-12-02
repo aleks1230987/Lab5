@@ -253,3 +253,24 @@ class Bandit: public virtual Human, public virtual Enemy {
         Damage = 2 + level;
     }
 };
+
+int main()
+{
+    Warrior voin("Geralt");
+    Human chel;
+    Mage mag("Gendalf");
+
+    cout << voin.GetHP() << endl;
+    mag.SetName("NewGendalf");
+    cout << chel.GetLevel() << endl;
+
+    Sword sword;
+    Staff staff;
+    mag.TakeWeapon(staff);
+    cout << mag.GetDmg() << endl;
+    voin.TakeWeapon(sword);
+    voin.UseWeapon(sword);
+
+    Bandit bandit1();
+
+}
