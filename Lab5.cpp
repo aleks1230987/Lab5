@@ -221,3 +221,18 @@ public:
         Name = name;
     }
 };
+
+class Enemy {
+public:
+    int Count;
+    Enemy() {
+        Count = 1;
+    }
+    Enemy(int k) {
+        Count = k;
+    }
+
+    int GetCount() {
+        return Count;
+    }
+};
